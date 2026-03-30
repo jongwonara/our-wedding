@@ -295,7 +295,7 @@
     $('#heroPhoto').src = 'images/hero/1.jpg';
     $('#heroNames').textContent = `${CONFIG.groom.name}  ·  ${CONFIG.bride.name}`;
     $('#heroDate').textContent = formatDate(CONFIG.wedding.date, CONFIG.wedding.time);
-    $('#heroVenue').innerHTML = `${CONFIG.wedding.venue}<br>${CONFIG.wedding.hall}`;
+    $('#heroVenue').textContent = `${CONFIG.wedding.venue} ${CONFIG.wedding.hall}`;
   }
 
   /* ═══════════════════════════════════════════
@@ -358,11 +358,13 @@
     const parentsHTML = `
       <div class="parent-row">
         ${parentLine(g.father, g.mother, g.fatherDeceased, g.motherDeceased)}
-        의 장남 <span class="child-name">${g.name}</span>
+        <span class="parent-dot">●</span>
+        의 아들 <span class="child-name">${g.name}</span>
       </div>
       <div class="parent-row">
         ${parentLine(b.father, b.mother, b.fatherDeceased, b.motherDeceased)}
-        의 장녀 <span class="child-name">${b.name}</span>
+        <span class="parent-dot">●</span>
+        의 딸 <span class="child-name">${b.name}</span>
       </div>
     `;
 
