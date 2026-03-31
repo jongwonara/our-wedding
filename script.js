@@ -178,7 +178,11 @@
     }
 
     resize();
-    window.addEventListener('resize', resize);
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 150);
+    });
 
     class Leaf {
       constructor() {
@@ -276,6 +280,10 @@
     }
 
     function animate() {
+      if (document.hidden) {
+        requestAnimationFrame(animate);
+        return;
+      }
       ctx.clearRect(0, 0, width, height);
       leaves.forEach(l => {
         l.update();
