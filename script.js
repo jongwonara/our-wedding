@@ -491,17 +491,23 @@
   let touchStartY = 0;
   let touchEndY = 0;
 
+  let savedScrollY = 0;
+
   function openPhotoModal(images, index) {
     modalImages = images;
     modalIndex = index;
     showModalImage();
     $('#photoModal').classList.add('is-open');
+    savedScrollY = window.scrollY;
     document.body.classList.add('no-scroll');
+    document.body.style.top = `-${savedScrollY}px`;
   }
 
   function closePhotoModal() {
     $('#photoModal').classList.remove('is-open');
     document.body.classList.remove('no-scroll');
+    document.body.style.top = '';
+    window.scrollTo(0, savedScrollY);
   }
 
   function showModalImage() {
