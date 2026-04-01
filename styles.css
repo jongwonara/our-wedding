@@ -477,15 +477,19 @@ a {
   object-position: center 30%;
 }
 
-.hero__content {
+/* hero 하단 wrapper - 텍스트+카운트다운을 하나로 묶어 절대 고정 */
+.hero__bottom {
   position: absolute;
-  bottom: 160px;   /* countdown 높이만큼 위에 배치 */
+  bottom: 0;
   left: 0;
   right: 0;
   z-index: 2;
+}
+
+.hero__content {
   text-align: center;
   color: var(--color-white);
-  padding: 0 var(--spacing-md);
+  padding: 0 var(--spacing-md) var(--spacing-md);
   width: 100%;
 }
 
@@ -530,11 +534,6 @@ a {
 
 /* ─── Countdown ─── */
 .countdown {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
   padding: var(--spacing-sm) var(--spacing-md) calc(var(--spacing-md) + var(--safe-bottom));
   text-align: center;
   color: var(--color-white);
