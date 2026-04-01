@@ -139,6 +139,16 @@
 
     namesEl.textContent = `${CONFIG.groom.name}  &  ${CONFIG.bride.name}`;
 
+    // 커튼 더블탭 줌 방지
+    let lastTapCurtain = 0;
+    curtain.addEventListener('touchend', (e) => {
+      const now = Date.now();
+      if (now - lastTapCurtain < 300) {
+        e.preventDefault();
+      }
+      lastTapCurtain = now;
+    }, { passive: false });
+
     btn.addEventListener('click', () => {
       curtain.classList.add('is-open');
       document.body.classList.remove('no-scroll');
