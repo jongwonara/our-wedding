@@ -585,6 +585,13 @@
       touchStartY = e.changedTouches[0].screenY;
     }, { passive: true });
 
+    // 핀치줌(두 손가락) 방지
+    container.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
     container.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
       touchEndY = e.changedTouches[0].screenY;
