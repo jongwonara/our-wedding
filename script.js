@@ -313,6 +313,7 @@
       hero.style.height = h + 'px';
       hero.style.minHeight = h + 'px';
       hero.style.maxHeight = h + 'px';
+      hero.style.overflow = 'hidden';
     }
 
     lockHeroHeight();
