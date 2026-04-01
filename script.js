@@ -304,7 +304,18 @@
     $('#heroNames').textContent = `${CONFIG.groom.name}  ·  ${CONFIG.bride.name}`;
     $('#heroDate').textContent = formatDate(CONFIG.wedding.date, CONFIG.wedding.time);
     $('#heroVenue').innerHTML = `${CONFIG.wedding.venue}<br>${CONFIG.wedding.hall}`;
-  }    
+
+    // 페이지 로드 시 viewport 높이를 CSS 변수로 딱 한 번 고정
+    // 주소창/하단바가 사라져도 hero 높이가 변하지 않음
+    function setVh() {
+      document.documentElement.style.setProperty('--vh100', window.innerHeight + 'px');
+    }
+    setVh();
+    // 가로/세로 회전 시에만 다시 측정
+    window.addEventListener('orientationchange', function() {
+      setTimeout(setVh, 300);
+    });
+  }
 
   /* ═══════════════════════════════════════════
      Countdown
