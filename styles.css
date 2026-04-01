@@ -440,7 +440,7 @@ a {
    Hero Section
    ═══════════════════════════════════════════ */
 .hero {
-  position: fixed;
+  position: relative;
   height: 100dvh;
   min-height: 100vh;
   display: flex;
@@ -449,20 +449,7 @@ a {
   justify-content: flex-end;
   padding: 0;
   overflow: hidden;
-  background-color: var(--color-forest-dark);
-  z-index: 0;      
-}
-
-.hero + .leaf-divider {
-  margin-top: 100vh;
-  position: relative;
-  z-index: 1;
-}
-
-/* 나머지 섹션들도 hero 위에 올라오도록 */
-.main-content > *:not(.hero) {
-  position: relative;
-  z-index: 1;
+  background-color: var(--color-forest-dark);   
 }
 
 .hero__overlay {
