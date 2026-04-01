@@ -304,7 +304,7 @@
     $('#heroNames').textContent = `${CONFIG.groom.name}  ·  ${CONFIG.bride.name}`;
     $('#heroDate').textContent = formatDate(CONFIG.wedding.date, CONFIG.wedding.time);
     $('#heroVenue').innerHTML = `${CONFIG.wedding.venue}<br>${CONFIG.wedding.hall}`;
-    
+  }    
 
   /* ═══════════════════════════════════════════
      Countdown
