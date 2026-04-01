@@ -305,23 +305,6 @@
     $('#heroDate').textContent = formatDate(CONFIG.wedding.date, CONFIG.wedding.time);
     $('#heroVenue').innerHTML = `${CONFIG.wedding.venue}<br>${CONFIG.wedding.hall}`;
     
-    // 페이지 로드 시 높이를 딱 한 번만 측정해서 CSS 변수로 고정
-    // → 주소창/하단바 사라져도 hero 크기가 변하지 않음
-    function lockHeroHeight() {
-      const hero = $('#hero');
-      const h = window.innerHeight;
-      hero.style.height = h + 'px';
-      hero.style.minHeight = h + 'px';
-      hero.style.maxHeight = h + 'px';
-      hero.style.overflow = 'hidden';
-    }
-
-    lockHeroHeight();
-    // resize는 가로 회전(orientation change)에만 반응하도록 제한
-    window.addEventListener('orientationchange', () => {
-      setTimeout(lockHeroHeight, 300);
-    });
-  }
 
   /* ═══════════════════════════════════════════
      Countdown
