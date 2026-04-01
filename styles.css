@@ -440,16 +440,17 @@ a {
    Hero Section
    ═══════════════════════════════════════════ */
 .hero {
-  position: fixed;
-  height: 100dvh;
-  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   padding: 0;
   overflow: hidden;
-  background-color: var(--color-forest-dark);   
+  background-color: var(--color-forest-dark);
 }
 
 .hero__overlay {
